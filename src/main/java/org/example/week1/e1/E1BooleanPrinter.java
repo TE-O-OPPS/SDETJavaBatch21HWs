@@ -8,8 +8,8 @@ public class E1BooleanPrinter {
         boolean isFalse;
         isTrue = true;
         isFalse = false;
-        System.out.println(isTrue);
-        System.out.println(isFalse);
+        System.out.println("The first boolean :"+ isTrue);
+        System.out.println("The first boolean :"+ isFalse);
 
 
     }
