@@ -13,6 +13,6 @@ public class E6ArithmeticOperations {
 
 
         // Step 3: Print the result
-        System.out.println( "The result of 8.2*8.2 is " + result);
+        System.out.println("The multiplication of "+ num + " with itself is equal to " + result);
     }
 }

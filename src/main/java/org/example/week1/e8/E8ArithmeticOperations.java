@@ -9,7 +9,7 @@ public class E8ArithmeticOperations {
         // Step 2: Calculate the perimeter
         // Use the formula: perimeter = 2 * (width + height)
         // (Write your code here to calculate the perimeter)
-        int perimeter= 2 * width + height;
+        int perimeter= 2 * (width + height);
 
         // Step 3: Calculate the area
         // Use the formula: area = width * height

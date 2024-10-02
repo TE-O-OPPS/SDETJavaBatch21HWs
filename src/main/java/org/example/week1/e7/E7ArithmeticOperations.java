@@ -14,10 +14,10 @@ public class E7ArithmeticOperations {
 
 
         // Step 3: Print the results
-        System.out.println(" num1 plus  num2 is :" +sum);
-        System.out.println("num1 minus  num2 is :" + difference);
-        System.out.println("num1 multiply num2 is: "+ product);
-        System.out.println(" num1 divide by  num2 is: " + quotient);
+        System.out.println( sum);
+        System.out.println( difference);
+        System.out.println( product);
+        System.out.println( quotient);
 
 
     }

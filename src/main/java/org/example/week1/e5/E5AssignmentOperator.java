@@ -4,17 +4,17 @@ public class E5AssignmentOperator {
     public static void main(String[] args) {
 
         // Step 1: Declare the String variable and set it to "Chen"
-         String  name = "Chine";
+         String  name = "Chen";
 
         // Step 2: Declare the integer variable and set it to 50
          int age= 50;
 
         // Step 3: Assign the value of age to iq
-        int iq = 30;
+        int iq = age;
         // Step 4: Print the value.
-        System.out.println(" This person name is " + name);
-        System.out.println("Chine's age is " + age);
-        System.out.println( "Iq's age is " + iq);
+        System.out.println( name);
+        System.out.print( age);
+        System.out.print(  iq);
 
 
 
