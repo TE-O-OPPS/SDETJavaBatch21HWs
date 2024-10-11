@@ -5,7 +5,7 @@ public class E2StringConcatenation {
         // Step 1: Declare the String variable and set it to "Java"
         // Step 2: Declare the String variable and set it to "programming language"
        String language, description, part1, part2;
-       language = "java";
+       language = "Java";
        description= "programming language";
        part1 = "syntax";
        part2 = "techs.com";
