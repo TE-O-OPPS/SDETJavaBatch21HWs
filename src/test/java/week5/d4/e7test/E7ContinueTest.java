@@ -1,7 +1,9 @@
 package week5.d4.e7test;
 
 
+
 import org.example.week5.d4.e6.E6Continue;
+import org.example.week5.d4.e7.E7Continue;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -11,7 +13,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E6ContinueTest {
+class E7ContinueTest {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -28,7 +30,7 @@ class E6ContinueTest {
 
     @Test
     void testContinueInLoops() {
-        E6Continue.main(new String[]{});
+        E7Continue.main(new String[]{});
         String expectedOutput = "Processing Item1" + System.lineSeparator() +
                                 "Processing Item2" + System.lineSeparator() +
                                 "Processing Item3" + System.lineSeparator() +
