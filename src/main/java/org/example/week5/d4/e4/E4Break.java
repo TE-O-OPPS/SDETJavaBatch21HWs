@@ -2,7 +2,7 @@ package org.example.week5.d4.e4;
 
 public class E4Break {
     public static void main(String[] args) {
-        // Create a Scanner object to read input from the console
+
 
 
         // Create an array of integers that will store 5 elements

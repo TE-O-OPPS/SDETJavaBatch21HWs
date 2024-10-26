@@ -2,7 +2,6 @@ package org.example.week5.d4.e3;
 
 public class E3EnhancedForLoop {
     public static void main(String[] args) {
-        // Create a Scanner object to read input from the console
 
 
         // Create an array of strings with size 7
