@@ -10,7 +10,5 @@ public class E5StringManipulationsP1 {
 
         // Use the isEmpty() method to check if 's2' is empty and print the result
 
-
-
     }
 }
