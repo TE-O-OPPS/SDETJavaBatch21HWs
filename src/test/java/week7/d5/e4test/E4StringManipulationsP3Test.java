@@ -1,6 +1,6 @@
-package week7.d4.e5test;
+package week7.d5.e4test;
 
-import org.example.week7.d4.e5.E5StringManipulationsP1;
+import org.example.week7.d5.e4.E4StringManipulationsP3;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -10,7 +10,7 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class E5StringManipulationsP1Test {
+class E4StringManipulationsP3Test {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
@@ -26,12 +26,14 @@ class E5StringManipulationsP1Test {
     }
 
     @Test
-    void testStringConcatenation() {
-        E5StringManipulationsP1.main(new String[]{});
-        String expectedOutput = "Hello World" + System.lineSeparator();
+    void testProductCodeValidation() {
+        E4StringManipulationsP3.main(new String[]{});
 
-        String failureMessage = "The output does not match the expected concatenated string.\n" +
-                "Please ensure that your program correctly concatenates the strings and prints the result.";
+        String expectedOutput = "Product code starts with 'K': true" + System.lineSeparator() +
+                                "Product code ends with '5': true" + System.lineSeparator();
+
+        String failureMessage = "The output does not match the expected results for the product code validation.\n" +
+                "Please ensure that your program correctly analyzes the product code and prints the correct results.";
 
         assertEquals(expectedOutput, outContent.toString(), failureMessage);
     }
