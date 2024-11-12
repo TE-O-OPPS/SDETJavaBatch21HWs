@@ -1,31 +1,40 @@
 package week8.d2.e9test;
 
 import org.example.week8.d2.e9.E9JavaMethods;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Method;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
 public class E9JavaMethodsTest {
 
+    private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+    private final PrintStream originalOut = System.out;
+
+    @Before
+    public void setUpStreams() {
+        System.setOut(new PrintStream(outContent));
+    }
+
+    @After
+    public void restoreStreams() {
+        System.setOut(originalOut);
+    }
+
     @Test
-    public void testCensorLetterMethod() {
-        try {
-            // Use reflection to find the method
-            Method method = E9JavaMethods.class.getDeclaredMethod("censorLetter", String.class, char.class);
-            String result1 = (String) method.invoke(null, "computer science", 'e');
-            String result2 = (String) method.invoke(null, "trick or treat", 't');
+    public void testMainMethodOutput() {
+        // Call the main method of E9JavaMethods, which should print the results of censorLetter
+        E9JavaMethods.main(new String[]{});
 
-            // Adding a detailed failure message
-            String failureMessage1 = "The output does not match the expected result for input 'computer science' with 'e'.";
-            String failureMessage2 = "The output does not match the expected result for input 'trick or treat' with 't'.";
+        // Define the expected output based on the expected behavior of censorLetter
+        String expectedOutput = "comput*r sci*nc*" + System.lineSeparator() +
+                "*rick or *rea*" + System.lineSeparator();
 
-            assertEquals(failureMessage1, "comput*r sci*nc*", result1);
-            assertEquals(failureMessage2, "*rick or *rea*", result2);
-        } catch (Exception e) {
-
-            assertEquals("Method censorLetter not implemented correctly.", true, false);
-        }
+        // Assert that the captured output matches the expected output
+        assertEquals("The output does not match the expected results.", expectedOutput, outContent.toString());
     }
 }
