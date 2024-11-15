@@ -13,7 +13,6 @@ public class E1StaticKeyword {
 
         // Call the static method directly using the class name
          // Call static method
-        System.out.println("Programming is amazing.");
-        System.out.println("Java is awesome.");
+
     }
 }
