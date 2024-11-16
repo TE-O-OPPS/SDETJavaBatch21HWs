@@ -36,14 +36,14 @@ Learn how to define and use instance variables, constructors (both non-argument 
 
    **Output Format (Explanation):**
     - The method should concatenate the `name`, `lastName`, `employeeId`, `startDate`, and `salary` into a single string and print this string to the console.
-    - The output should look like: `Name LastName EmployeeId StartDate Salary`. For example, "Joe Smith 12345 01011970 35000".
+    - The output should look like: `Name LastName EmployeeId StartDate Salary`. For example, "Joe Smith 12345 01/01/1970 35000".
 
 **Step 4: Test the Employee Class in the Main Class**
 
 1. **In the `Main` class:**
     - Create two objects of the `Employee` class:
         - The first object should be created using the non-argument constructor.
-        - The second object should be created using the parameterized constructor with values like "Joe", "Smith", 12345, "01011970", and 35000.
+        - The second object should be created using the parameterized constructor with values like "Joe", "Smith", 12345, "01/01/1970", and 35000.
     - Use the method created in Step 3 to print the details of each `Employee` object.
 
    **Example Steps (Explanation):**
@@ -61,7 +61,7 @@ Learn how to define and use instance variables, constructors (both non-argument 
 
   ```
   null null 0 null 0
-  Joe Smith 12345 01011970 35000
+  Joe Smith 12345 01/01/1970 35000
   ```
 
 ## Tips:
