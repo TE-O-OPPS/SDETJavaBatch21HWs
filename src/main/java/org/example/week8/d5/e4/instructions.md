@@ -31,7 +31,7 @@ In this project, you will declare four variables using different access modifier
         - Assign 9 to `batch number`
     - Call the `display` method to print the details.
 
-### Example InputOutput:
+### Example Output:
 
 - Expected output:
   ```
