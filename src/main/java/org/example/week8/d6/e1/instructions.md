@@ -36,7 +36,7 @@ In this project, you will complete the `SyntaxTechnologies` class by creating in
         - One using the parameterized constructor.
     - Call the `display()` method on both objects to print the values of the instance variables.
 
-### Example InputOutput:
+### Example Output:
 
 - Example when using the non-argument constructor:
   ```

@@ -35,7 +35,7 @@ public static String mixString(String s1, String s2) {
 ### Input Constraints:
 - Both strings should be of **equal lengths**.
 
-### Example InputOutput:
+### Example Output:
 
 - `1a2b3c4d5e`
 

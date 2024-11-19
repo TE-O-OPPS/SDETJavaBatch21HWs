@@ -36,7 +36,7 @@ In this project, you will create methods with the four different access modifier
         - Protected Method
         - Public Method
 
-### Example InputOutput:
+### Example Output:
 
 - Expected output:
   ```

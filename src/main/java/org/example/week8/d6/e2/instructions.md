@@ -37,7 +37,7 @@ In this project, you will complete the `Car` class by creating instance variable
     - In the `MainClass`, create several objects of the `Car` class using each of the four constructors.
     - Call the `display()` method on each object to print the values of the instance variables.
 
-### Example InputOutput:
+### Example Output:
 
 - Example output for objects created with different constructors:
   ```
