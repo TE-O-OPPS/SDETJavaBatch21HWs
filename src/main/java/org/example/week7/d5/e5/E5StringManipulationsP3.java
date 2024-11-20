@@ -2,14 +2,15 @@ package org.example.week7.d5.e5;
 
 public class E5StringManipulationsP3 {
     public static void main(String[] args) {
-// Hint 1: Declare and initialize your email string - think about a valid email format
-
-// Hint 2: Remember index 0 gives you the first character of any string
-
-// Hint 3: Use >= and <= with a-z and A-Z to check for letters, combine with OR (||)
-
-// Hint 4: The 5th character is at index 4 (since counting starts at 0)
-
-// Hint 5: Use == to compare characters
+String emailAddress ="user@example.com";
+char firstChar= emailAddress.charAt(0);
+//checking if the character's unicode value is between 'a' and 'z'(for lower case letter).
+        boolean startWithLetter=(firstChar>='a'&& firstChar<='z'||firstChar>='A'&&firstChar<='Z');
+        //extract the 5th character (index4)
+        char fifthChar=emailAddress.charAt(4);
+        //check if the 5th character @
+        boolean atSymbole = fifthChar=='@';
+        System.out.println("Email starts with a letter: "+startWithLetter);
+        System.out.println("5th character is @: "+atSymbole);
     }
 }

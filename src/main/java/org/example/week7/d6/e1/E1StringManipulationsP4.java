@@ -2,17 +2,25 @@ package org.example.week7.d6.e1;
 
 public class E1StringManipulationsP4 {
     public static void main(String[] args) {
-// Step 1: Declare a String variable named `dataString`
-
-// Step 2: Use the substring() method to extract the ID
-
-// Step 3: Use the substring() method to extract the full name
-
-// Step 4: Use the substring() method to extract the age
-
-// Step 5: Use the substring() method to extract everything from the CITY field to the end
-
-// Step 6: Print the results of your extractions
+String dataString="ID:12345-NAME:John Doe-AGE:30-CITY:NEW York";
+int idstart =dataString.indexOf("ID:")+3;
+int idend= dataString.indexOf("-NAME:");
+String id = dataString.substring(idstart,idend);
+// extract the full name John doe
+        int nameStart =dataString.indexOf("NAME:")+5;
+        int nameEnd= dataString.indexOf("-AGE");
+        String name = dataString.substring(nameStart,nameEnd);
+        // extract age 30.
+        int ageStart= dataString.indexOf("AGE:")+4;
+        int ageEnd = dataString.indexOf("-CITY");
+        String age = dataString.substring(ageStart,ageEnd);
+        //extract everything from the city field
+        int cityStart = dataString.indexOf("30-")+3;
+        String cityInfo = dataString.substring(cityStart);
+        System.out.println("ID: "+ id);
+        System.out.println("Name: "+name);
+        System.out.println("Age: "+ age);
+        System.out.println("City Info: "+cityInfo);
 
 
 

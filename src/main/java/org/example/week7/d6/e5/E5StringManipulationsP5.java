@@ -3,20 +3,31 @@ package org.example.week7.d6.e5;
 public class E5StringManipulationsP5 {
     public static void main(String[] args) {
         String csvLine = "John Doe,22,Computer Science,3.8,2025";
+        //csvLine.length()
+String []strings  = csvLine.split(",");
+String name=strings[0];
+String age=strings[1];
+String major =strings[2];
+String gpa=strings[3];
+String year=strings[4];
+// Split the full name by space to separate first and last names
+        String[] parts = name.split(" ");
+        // Count the number of parts (words) in the full name
+        int wordCount = parts.length;
 
-        // Declare the CSV line string
 
-        // Split the string into an array using the comma delimiter
+        System.out.println("Name: "+name);
+        System.out.println("Age: " + age);
+        System.out.println("Major: "+major);
+        System.out.println("GPA: "+gpa);
+        System.out.println("Graduation Year: "+ year);
+        System.out.println("Name Word Count: "+ wordCount);
+        System.out.println("Major Length: "+major.length());
 
-        // Extract student's full name, age, major, GPA, and graduation year
 
-        // Calculate the number of words in the full name
 
-        // Calculate the length of the student's major
 
-        // Print the extracted and calculated information
 
-        // Split the string into an array of fields
 
 
     }

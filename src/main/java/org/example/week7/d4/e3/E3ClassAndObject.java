@@ -3,19 +3,29 @@ package org.example.week7.d4.e3;
 public class E3ClassAndObject {
 
     public static void main(String[] args) {
-        // Create a class named 'Dog'
+       Dog dog1 = new Dog();
+      dog1.breed="Husky";
+      dog1.name="cutey pie";
+      dog1.color="brown";
+      dog1.bark();
+      dog1.run();
+      dog1.play();
 
-        // Declare String variables named 'breed', 'name', and 'color'
+        Dog dog2= new Dog();
+        dog2.breed= "Bulldog";
+        dog2.color="black";
+        dog2.name= "puppy";
+        dog2.bark();
+        dog2.run();
+        dog2.play();
+      Dog dog3= new Dog();
+        dog3.breed="Labrador";
+        dog3.color="White";
+        dog3.name= "Zara";
+        dog3.bark();
+        dog3.run();
+        dog3.play();
 
-        // Declare methods named 'bark()', 'run()', and 'play()' that print messages in the specified format
-
-        // Create the first object of the class 'Dog' with breed = "Husky", name = "AnyName", color = "AnyColor"
-
-        // Create the second object of the class 'Dog' with breed = "Bulldog", name = "AnyName", color = "AnyColor"
-
-        // Create the third object of the class 'Dog' with breed = "Labrador", name = "AnyName", color = "AnyColor"
-
-        // Call the methods 'bark()', 'run()', and 'play()' for each object
 
 
 
