@@ -1,25 +1,73 @@
 package pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import utilties.CommonMethods;
 
-public class LoginPage extends CommonMethods {
+import java.awt.*;
 
-        @FindBy(xpath = "//input[@id='txtUsername']")
-        public WebElement usernameField;
+public class LoginPage  {
+    WebDriver driver;
 
-        @FindBy(xpath= "//input[@id='txtPassword']")
-        public WebElement passwordField;
+    @FindBy(id = "txtUsername")
+    public WebElement usernameField;
 
-        @FindBy(xpath = "//input[@id='btnLogin']")
-        public WebElement loginButton;
-        @FindBy(xpath = "//span[@id='spanMessage']")
-        public WebElement errorMessage;
+    @FindBy(id = "txtPassword")
+    public WebElement passwordField;
 
-        public LoginPage() {
-                //page factory which is used to initialize all the locators/elements
-                PageFactory.initElements(driver, this);
-        }
+    @FindBy(id = "btnLogin")
+    public WebElement loginButton;
+
+    @FindBy(id = "usernameError")
+    public  WebElement usernameError;
+
+    @FindBy(id = "passwordError")
+    public WebElement passwordError;
+
+    @FindBy(id = "loginError")
+    public WebElement loginError;
+
+    @FindBy(id = "welcome")
+    public WebElement welcomeMessage;
+
+    public LoginPage() {
+       // this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public void enterUsername(String username) {
+        usernameField.clear();
+        usernameField.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        passwordField.clear();
+        passwordField.sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        loginButton.click();
+    }
+
+    public String getUsernameErrorMessage() {
+        return usernameError.getText();
+    }
+
+    public String getPasswordErrorMessage() {
+        return passwordError.getText();
+    }
+
+    public String getLoginErrorMessage() {
+        return loginError.getText();
+    }
+
+    public boolean isUserLoggedIn() {
+        return welcomeMessage.isDisplayed();
+    }
+
 }
+
+
+

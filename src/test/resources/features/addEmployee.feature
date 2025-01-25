@@ -1,43 +1,39 @@
-Feature: Adding an employee using different methods
+Feature: Add Employee to HRMS
 
-
+  @all
   Background:
-    #Given user is able to access HRMS application#it include in the hooks
-    When user enters admin username and password
-    And user clicks on login button
-    Then user is able to see dashboard page
-    When user clicks on PIM button
-    And user clicks on Add Employee option
+    Given the admin user is logged into the HRMS application
+
+  Scenario: Add an employee without providing an employee ID
+    When the admin clicks on the PIM option
+    And the admin clicks on the Add Employee option
+    And the admin enters the employee details:
+      | First Name | Middle Name | Last Name |
+      | John       | A.          | Doe       |
+    And the admin clicks on the Save button
+    Then the system should save the employee with the provided employee details
 
   @smoke
-  Scenario: Adding an employee using hardcode data
-    When user enters firstname and middlename and lastname
-    And user clicks on save button
-    Then employee added successfully
+  Scenario: Add an employee with an employee ID
+    When the admin clicks on the PIM option
+    And the admin clicks on the Add Employee option
+    And the admin enters the employee details:
 
- @feature
-  Scenario: adding an employee using feature file
-    And users enters data "andrey" and "ms" and "ziad"
-    And user clicks on save button
-    Then employee added successfully
+      | First Name | Last Name | Employee ID |
+      | Alice      | Smith     | 12345       |
+    And the admin clicks on the Save button
+    Then the system should save the employee with the provided ID
 
-  @example
-  Scenario Outline: Adding multiple employees using features file
-    And users enters "<firstname"> and <"middlename"> and <"lastname">.
-    And  user clicks on save button
-    Then employee added successfully
+  @error
+  Scenario Outline: Validate required fields and error message
+    And the admin enters the employee details:
+  | First Name | Middle Name | Last Name | Employee ID |
+  | <First>    | <Middle>    | <Last>    | <EmpID>     |
+    And the admin clicks on the Save button
+    Then the system should display "<ErrorMessage>"
+
     Examples:
-      | firstname |middlename    |lastname |
-      |andrew      |ms           |symonds  |
-      | matthew  |ms           |hayden   |
-      |steve       |ms           |smith    |
-  @datatable
-  Scenario: Adding employees using data table
-    When user add multiple employees using data table and verify them
-      |firstName   |middleName   |lastName |
-      |andrew      |ms           |symonds  |
-      |matthew     |ms           |hayden   |
-      |steve       |ms           |smith    |
-  @excel
-  Scenario: Add employee from excel file
-    When user adds employee from excel file and verify them
+      | First   | Middle | Last   | EmpID | ErrorMessage             |
+      |         | A.     | Doe    |       | First Name is required.  |
+      | John    | A.     |        |       | Last Name is required.   |
+      | Michael |        | Connor |       | last name doesn't match. |

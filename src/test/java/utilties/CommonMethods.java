@@ -8,28 +8,30 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
 
-public class CommonMethods extends PageInitializer {
 
-    public static  WebDriver driver;
+
+public class CommonMethods extends PageInitilaizer {
+    public static WebDriver driver;
     public static void openBrowserAndLaunchApplication() throws IOException {
 
-        switch (ConfigReader.read("browser")){
+        switch (ConfigReader.read("browser")) {
             case "Chrome":
                 //ChromeOptions chromeOptions = new ChromeOptions();
                 //chromeOptions.addArguments("--headless");
-                driver=new ChromeDriver();
+                driver = new ChromeDriver();
                 break;
             case "FireFox":
-                driver=new FirefoxDriver();
+                driver = new FirefoxDriver();
                 break;
             case "Edge":
-                driver=new EdgeDriver();
+                driver = new EdgeDriver();
                 break;
             default:
                 throw new RuntimeException("Invalid Browser Name");
@@ -39,15 +41,16 @@ public class CommonMethods extends PageInitializer {
         driver.manage().window().maximize();
         driver.get(ConfigReader.read("url"));
         initializePageObjects();
+
     }
 
     public static void closeBrowser(){
         if(driver!=null){
-        driver.quit();
+            driver.quit();
         }
     }
 
-    public  static  void selectFromDropDown(WebElement dropDown,int index){
+    public  static  void selectFromDropDown(WebElement dropDown, int index){
         Select sel=new Select(dropDown);
         sel.selectByIndex(index);
     }
@@ -69,9 +72,9 @@ public class CommonMethods extends PageInitializer {
     }
 
 
-    public  static  WebDriverWait getwait(){
-    WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(20));
-    return  wait;
+    public  static WebDriverWait getwait(){
+        WebDriverWait wait= new WebDriverWait(driver,Duration.ofSeconds(20));
+        return  wait;
     }
 
     public static void waitForElementToBeClickable(WebElement element){
@@ -102,24 +105,26 @@ public class CommonMethods extends PageInitializer {
         return picBytes;
     }
 
-   public static String getTimeStamp(String pattern){
+    public static String getTimeStamp(String pattern){
 
         Date date = new Date();
         //yyyy-MM-dd-hh-mm-ss
-       //dd-MM-yyyy-mm-hh-ss
-       //to get the date in my acceptable format, i need to format it
-       SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+        //dd-MM-yyyy-mm-hh-ss
+        //to get the date in my acceptable format, i need to format it
+        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
 
-       return sdf.format(date);
-   }
-   public static JavascriptExecutor getJSExecutor(){
+        return sdf.format(date);
+    }
+    public static JavascriptExecutor getJSExecutor(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         return js;
-   }
+    }
 
-   public static void jsClick(WebElement element){
-       getJSExecutor().executeScript("arguments[0].click();",element);
+    public static void jsClick(WebElement element){
+        getJSExecutor().executeScript("arguments[0].click();",element);
 
-   }
+    }
 
 }
+
+

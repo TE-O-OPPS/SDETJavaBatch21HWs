@@ -1,32 +1,23 @@
 Feature: Login Validation
-  Validate the login functionality for the HRMS application.
+  Validate the login functionality for the HRMS portal with clear error messages.
 
-#Background: Given the user is on the login page
-  Scenario: Attempt to log in with an empty username
-   # Given the user is on the login page
-    When the user enters empty username and valid password
-    Then the user clicks on the login button
-    And the error message "Username cannot be empty." should be displayed
+@invalidCredential
+  Scenario: Validate error messages for various login attempts
+    Given the user is on the login page
 
-  Scenario: Attempt to log in with an empty password
-   # Given the user is on the login page
-    When the user enters valid username and empty password
-    Then the user clicks on the login button
-    And the error message "Password is empty." should be displayed
+    When the user attempts to log in with the following credentials:
+      | Username     | Password       |
+      | ""           | validPassword  |
+      | validUser    | ""             |
+      | invalidUser  | invalidPass    |
+    Then the system should display the following error messages:
+      | Username     | Password       | Error Message                  |
+      | ""           | validPassword  | Username cannot be empty.      |
+      | validUser    | ""             | Password is empty.             |
+      | invalidUser  | invalidPass    | Invalid credentials.           |
 
-  Scenario: Attempt to log in with incorrect credentials
-   # Given the user is on the login page
-    When the user enters username as "wronguser" and password as "wrongpassword"
-    Then the user clicks on the login button
-    And the error message "Invalid credentials." should be displayed
 
-  @retryLogin
-  Scenario: Correcting input after an error message and logging in successfully
-   # Given the user is on the login page
-    When the user enters invalid username and invalid  password
-    And the user clicks on the login button
-    Then the error message "Invalid credentials." should be displayed
-    When user clear the invalid credential and use valid credentials
-    When the user enters username as "Admin" and password as "Hum@nhrm123"
-    And the user clicks on the login button
+    When the user attempts to log in with valid credentials:
+      | Username    | Password        |
+      | Admin        |  Hum@nhrm123  |
     Then the user should be successfully logged in
